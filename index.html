@@ -4,86 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mi Página Web</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            body {
-                background-color: lightblue;
-                font-family: sans-serif;
-            }
-            h1 {
-                color: navy;
-                text-align: center;
-            }
-            .mi-caja {
-                background-color: white;
-                border: 2px solid black;
-                padding: 20px;
-            }
-            .contenedor {
-                max-width: 600px;
-                margin: 40px auto; /* Añadimos margen arriba para que no pegue en el techo */
-                background-color: #f0f0f0;
-                padding: 30px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-                box-shadow: 0 4px 15px rgb(0, 0, 0, 0.2);
-            }
-            a, button {
-                background-color: navy;
-                color: white;
-                text-decoration: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                text-align: center;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-                border: none;
-            }
-            a:hover, button:hover {
-                background-color: steelblue;
-            }
-            form {
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-            input {
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
-            @media (max-width: 480px) {
-                body {
-                    background-color: white;
-                }
-                .contenedor {
-                    width: 100%;
-                    padding: 10px;
-                    margin: 0;
-                    box-shadow: none;
-                }
-                h1 {
-                    font-size: 1.5rem;
-                }
-            }
-            .avatar {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin: 0 auto;
-                border: 3px solid navy;
-                transition: transform 0.3s ease; /* Preparamos la animación */
-            }
-            .avatar:hover {
-                transform: scale(1.1); /* hace que la imagen crezca un 10% y le da un efecto de agrandado */
-            }
-        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="contenedor">
@@ -94,22 +18,11 @@
             <a href="#">Sígueme en GitHub</a>
             <form id="mi-formulario">
                 <label for="email-user">Suscríbete</label>
-                <input id="email-user" type="email" placeholder="Tu correo aquí...">
+                <input id="email-user" type="email" required placeholder="Tu correo aquí...">
                 <button>Enviar</button>
             </form>
             <p id="mensaje-exitoso"></p>
         </div>
-
-        <script>
-            const formulario = document.getElementById('mi-formulario')
-            const mensaje = document.getElementById('mensaje-exitoso')
-
-            formulario.addEventListener('submit', function(evento){
-                evento.preventDefault(); //Evita que la página se recargue
-                mensaje.textContent = "¡Gracias por suscribirte! Te avisaremos pronto.";
-                mensaje.style.color = "green";
-                formulario.style.display = "none"; // Ocultamos el formulario déspues de enviar
-            }) 
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
